@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>윤나린</title>
+    </head>
+    <body>
+        <h2>동아리 가입 양식</h2>
+        <form>
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name"><br/>
+            <label for="major">학부/학과</label>
+            <select id="major" name="major">
+                <option value="software">소프트웨어학부</option>
+                <option value="english">영어영문학부</option>
+                <option value="it">인공지능학부</option>
+                <option value="business">경영학부</option>
+            </select><br/>
+            <label for="grade">학년</label>
+            <input type="radio" id="first" name="grade" value="1학년">
+            <label for="first">1학년</label>
+            <input type="radio" id="second" name="grade" value="2학년">
+            <label for="second">2학년</label>
+            <input type="radio" id="third" name="grade" value="3학년">
+            <label for="third">3학년</label>
+            <input type="radio" id="fourth" name="grade" value="4학년">
+            <label for="fourth">4학년</label><br/>
+            <label for="number">학번</label>
+            <input type="text" id="number" name="number"><br/>
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email"><br/>
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone" name="phone"><br/>
+            <label for="motive">가입동기</label>
+            <textarea name="motive" rows="5" cols="30">
+            </textarea><br/>
+            <button type="button" onclick="alert('register')">가입하기</button>
+            <button type="button" onclick="alert('cancel')">취소하기</button>
+        </form>
+        
+
+    </body>
+</html>
