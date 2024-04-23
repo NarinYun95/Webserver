@@ -1,0 +1,180 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#top_header{
+    padding: 5px;
+    background-color: rgb(241, 151, 172);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+#title {
+    color: aliceblue;
+    float: left;
+}
+
+#title h1, p{
+  padding: 10px;
+  margin: 0;
+}
+
+
+#navi{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navi li{/*전체 메뉴의 리스트에 대한 스타일*/
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#navi li a{ /*메인메뉴 링크의 스타일*/
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  color: aliceblue;
+}
+
+#navi li a:hover{/*메인메뉴링크에 마우스 포인터를 올렸을 떄*/
+  background-color: aliceblue;
+  color: midnightblue;
+}
+
+#navi ul{/*서브메뉴스타일*/
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  position: absolute;
+  left:0;
+  top:45px;
+  width: 220px;
+  text-align: center;
+  background-color: rgb(241, 151, 172);
+  opacity: 0;
+}
+
+#navi ul li{/*서브메뉴 리스트들의 스타일*/
+  float:none;
+  margin: 0;
+  padding: 0;
+}
+
+#navi li:hover ul{
+  opacity: 1;
+}
+
+#navi li:hover ul li{
+  overflow: visible;
+  padding: 0;
+}
+
+#left{
+  background-color:rgb(241, 151, 172);
+  padding: 5px;
+  margin: 5px 0px;
+}
+
+label{
+  color: aliceblue;
+  padding: 5px 0px;
+  margin: 5px;
+}
+
+input{
+  padding: 5px 5px;
+  margin: 5px;
+}
+
+#middle{
+  margin: 5px;
+}
+
+.card{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 5px;
+  margin: 8px;
+  box-shadow: 5px 5px 5px 1px gray;
+}
+
+.card header{
+  padding: 0px 10px;
+  margin: 0;
+  font-weight: border;
+  font-size: larger;
+}
+
+.content{
+  display: flex;
+  justify-content: space-around; 
+}
+
+.content figure, p{
+  padding: 10px;
+  margin: 0;
+}
+
+
+#right{
+  padding: 5px;
+  margin: 5px 0px;
+}
+
+#ad article{
+  border: 2px solid rgb(245, 115, 145);
+  border-radius: 10px;
+  margin: 5px 1px;
+  padding: 0px;
+  background-color:ivory;
+}
+
+#ad article p{
+  padding: 10px;
+  margin: 0;
+}
+
+h3{
+  padding: 5px 0px;
+  margin: 0;
+}
+
+footer{
+  padding: 5px;
+  background-color: rgb(241, 151, 172);
+}
+
+#foot{
+  overflow: hidden;
+}
+
+#foot ul{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+#foot li a{
+  text-decoration: none;
+  color: aliceblue;
+  justify-content: space-around;
+}
