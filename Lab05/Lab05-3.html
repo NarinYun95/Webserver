@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이름: <span id="name"></span><br>
+        나이: <span id="age"></span><br>
+        키: <span id="height"></span><br>
+        체중: <span id="weight"></span><br>
+        당신은 <span id="result"></span>(<span id="Kaup"></span>)입니다.
+    </h1>
+    <script>
+        let name = prompt("이름을 입력하시오.");
+        let age = prompt("나이를 입력하시오.(숫자)")
+        let height = prompt("키를 입력하시오.(숫자)")
+        let weight = prompt("체중을 입력하시오.(숫자)")
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("age").innerHTML = age;
+        document.getElementById("height").innerHTML = height;
+        document.getElementById("weight").innerHTML = weight;
+        let Kaup = function(age, height, weight){
+            height /= 100;
+            kaup = weight / height**2;
+            if (age>=30){
+                if(kaup > 30){
+                    document.getElementById("result").innerHTML = "비만"
+                } 
+                else if(kaup >= 25){
+                    document.getElementById("result").innerHTML = "과체중"
+                }
+                else if(kaup >= 18.5){
+                    document.getElementById("result").innerHTML = "표준체중"
+                }
+                else {
+                    document.getElementById("result").innerHTML = "저체중"
+                }
+            }
+            else if (age>=20){
+                if(kaup > 30){
+                    document.getElementById("result").innerHTML = "비만"
+                } 
+                else if(kaup >= 24){
+                    document.getElementById("result").innerHTML = "과체중"
+                }
+                else if(kaup >= 18){
+                    document.getElementById("result").innerHTML = "표준체중"
+                }
+                else {
+                    document.getElementById("result").innerHTML = "저체중"
+                }
+            }
+            document.getElementById("Kaup").innerHTML = kaup;
+        }
+        Kaup(age, height, weight);
+    </script>
+</body>
+</html>

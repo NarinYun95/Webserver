@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+<script>
+    let number = prompt("카운트다운할 숫자를 입력하세요.");
+        
+    function countdown() {
+        if (number > 0) {
+            document.getElementById("demo").innerHTML = number;
+            number--;
+        } else {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "타이머 종료";
+        }
+    }
+        
+    const x = setInterval(countdown, 1000);
+    
+</script>
+</body>
+</html>
