@@ -1,0 +1,24 @@
+.product-box {
+    border: 2px solid #000;
+    border-radius: 5%;
+    padding: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+}
+
+.product-description {
+    font-size: 18px;
+    font-family: "Orbit", sans-serif;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 20px;
+    font-family: 'Do Hyeon', sans-serif;
+    color: #d57eac;
+}
