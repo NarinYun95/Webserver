@@ -1,24 +1,54 @@
+/* Add or modify these styles in main_style.css */
+
+h2{
+    margin-bottom: 50px;
+}
+
 .product-box {
     border: 2px solid #000;
     border-radius: 5%;
-    padding: 20px;
+    padding: 10px; /* 패딩 조정 */
     margin-bottom: 40px;
     text-align: center;
+    width: 200px; /* 원하는 박스의 너비 */
+    height: 300px; /* 원하는 박스의 높이 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* 패딩을 포함한 크기 조정 */
+}
+
+.product-img-container {
+    flex: 1; /* 남은 공간을 차지 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden; /* 오버플로우 숨김 */
 }
 
 .product-img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 이미지 비율 유지하면서 박스에 맞춤 */
 }
 
 .product-description {
     font-size: 18px;
     font-family: "Orbit", sans-serif;
     margin: 10px 0;
+    width: 100%;
+    overflow: hidden; /* 텍스트 오버플로우 숨김 */
+    text-overflow: ellipsis; /* 말줄임표로 오버플로우 처리 */
+    white-space: normal; /* 여러 줄로 표시 */
+    word-wrap: break-word; /* 단어가 박스를 넘지 않도록 단어 줄바꿈 */
 }
 
 .product-price {
     font-size: 20px;
     font-family: 'Do Hyeon', sans-serif;
     color: #d57eac;
+    width: 100%;
+    margin-top: auto; /* 상단 마진 자동 설정으로 항상 하단에 배치 */
+    text-align: center;
 }
