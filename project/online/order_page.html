@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Order Page - NONGDAMGOM WORLD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../main/main_style.css">
+  <link rel="stylesheet" href="order_page.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Do+Hyeon&family=Gamja+Flower&family=Orbit&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header">
+  <h1 class="custom-font">NONGDAMGOM WORLD</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm">
+  <ul class="navbar-nav mx-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="../main/main.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="online.html">Online Store</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Offline Store</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">My Page</a>
+    </li>
+  </ul>
+  <button class="btn ml-auto" type="button">Login</button>
+</nav>
+
+<div class="container">
+  <div id="order">
+    <h2 class="text-center">주문 정보</h2>
+    <div id="order-summary" class="mb-3">
+      <p id="product-name"></p>
+      <p id="product-quantity"></p>
+    </div>
+    <form id="order-form">
+      <div class="form-group">
+        <label class="info" for="name">성명</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label class="info" for="payment">결제 비밀번호</label>
+        <input type="password" class="form-control" id="payment" required>
+      </div>
+      <div class="form-group">
+        <label class="info" for="phone">전화번호</label>
+        <div class="d-flex">
+          <input type="text" class="form-control phone-input" id="phone1" maxlength="3" required>
+          <span class="mx-1">-</span>
+          <input type="text" class="form-control phone-input-middle" id="phone2" maxlength="4" required>
+          <span class="mx-1">-</span>
+          <input type="text" class="form-control phone-input" id="phone3" maxlength="4" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="info" for="address">주소</label>
+        <input type="text" class="form-control" id="address" required>
+      </div>
+      <div class="form-group">
+        <label class="info">배송 방법</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="normal" checked>
+            <label class="form-check-label" for="delivery1">일반 배송</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="delivery" id="delivery2" value="rocket">
+            <label class="form-check-label" for="delivery2">로켓 배송</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions text-center">
+        <button type="button" class="btn2 btn-outline-secondary" onclick="history.back()">취소하기</button>
+        <button type="submit" class="btn2 btn-outline-primary">주문하기</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="text-center">웃음마을 행복구 123번지 농담곰의 미소집 3층<br>
+    010-0069-9290 nongdam@dangom.com<br>
+    Copyright(C)Damgom. All right reserved.</p>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get('id');
+  const quantity = urlParams.get('quantity');
+
+  // Example product data (should be fetched from a server in a real application)
+  const products = {
+    1: '나가노 캐릭터 친구 마스코트 (트위터)',
+    2: '스마트폰에 붙일 수 있는 나가노 캐릭터 스티커',
+    3: '아크릴 스탠드를 먹는 나가노 캐릭터',
+    4: '블랙 농담곰 인형',
+    5: '농담곰 인형',
+    6: '고로케 키링',
+    7: '나무조각이 된 농담곰 인형',
+    8: '농담곰 얼굴 인형'
+  };
+
+  if (productId && quantity) {
+    document.getElementById('product-name').innerHTML = `<span class="bold">주문 상품:</span> ${products[productId]}`;
+    document.getElementById('product-quantity').innerHTML = `<span class="bold">상품 개수:</span> ${quantity}개`;
+  } else {
+    document.getElementById('order-summary').innerText = '상품 정보를 찾을 수 없습니다.';
+  }
+
+  document.getElementById('order-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    window.location.href = 'order_complete.html';
+  });
+</script>
+
+</body>
+</html>
