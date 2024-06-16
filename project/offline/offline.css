@@ -19,10 +19,12 @@
     position: absolute; /* 절대적 위치 설정 */
     bottom: 20px; /* 아래쪽으로부터 20px */
     right: 20px; /* 오른쪽으로부터 20px */
+    font-size: 18px;
+    border-radius: 10%;
 }
 
 .btn2:hover {
-    background-color: #ff97ce;
+    background-color: #d57eac;
     font-weight: 600;
 }
 

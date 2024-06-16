@@ -11,6 +11,47 @@
   <link rel="stylesheet" href="../main/main_style.css">
   <link rel="stylesheet" href="order_page.css">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Do+Hyeon&family=Gamja+Flower&family=Orbit&display=swap" rel="stylesheet">
+<style>
+    .form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    margin: 0 10px;
+}
+
+.info{
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn2 {
+    background-color: #ffd0e9;
+    color: #000;
+    border: 1.5px solid #000;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.btn2:hover{
+    background-color: #ff97ce;
+    font-weight: 600;
+}
+
+#order{
+    border: solid #000 2px;
+    padding: 20px;
+    width: 500px;
+    height: auto;
+    margin: 50px auto;
+}
+
+</style>
 </head>
 <body>
 
@@ -24,13 +65,13 @@
       <a class="nav-link" href="../main/main.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="online.html">Online Store</a>
+      <a class="nav-link" href="../online/online.html">Online Store</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="../offline/offline.html">Offline Store</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="../mypage/mypage.html">My Page</a>
+      <a class="nav-link" href="mypage.html">My Page</a>
     </li>
   </ul>
   <a class="btn" href="../login/login.html">Login</a>
@@ -39,10 +80,7 @@
 <div class="container">
   <div id="order">
     <h2 class="text-center">주문 정보</h2>
-    <div id="order-summary" class="mb-3">
-      <p id="product-name"></p>
-      <p id="product-quantity"></p>
-    </div>
+    <div id="order-summary" class="mb-3"></div>
     <form id="order-form">
       <div class="form-group">
         <label class="info" for="name">성명</label>
@@ -81,7 +119,7 @@
       </div>
       <div class="form-actions text-center">
         <button type="button" class="btn2 btn-outline-secondary" onclick="history.back()">취소하기</button>
-        <button type="submit" class="btn2 btn-outline-primary">주문하기</button>
+        <button type="submit" class="btn2 btn-outline-primary" onclick="url('order_complete.html')">주문하기</button>
       </div>
     </form>
   </div>
@@ -94,28 +132,28 @@
 </div>
 
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('id');
-  const quantity = urlParams.get('quantity');
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderSummaryElement = document.getElementById('order-summary');
 
-  // Example product data (should be fetched from a server in a real application)
-  const products = {
+    // Example product data (should be fetched from a server in a real application)
+    const products = {
     1: '나가노 캐릭터 친구 마스코트 (트위터)',
-    2: '스마트폰에 붙일 수 있는 나가노 캐릭터 스티커',
-    3: '아크릴 스탠드를 먹는 나가노 캐릭터',
-    4: '블랙 농담곰 인형',
-    5: '농담곰 인형',
-    6: '고로케 키링',
-    7: '나무조각이 된 농담곰 인형',
-    8: '농담곰 얼굴 인형'
-  };
+    2: '블랙 농담곰 인형'
+    // Add more products here as needed
+    };
 
-  if (productId && quantity) {
-    document.getElementById('product-name').innerHTML = `<span class="bold">주문 상품:</span> ${products[productId]}`;
-    document.getElementById('product-quantity').innerHTML = `<span class="bold">상품 개수:</span> ${quantity}개`;
-  } else {
-    document.getElementById('order-summary').innerText = '상품 정보를 찾을 수 없습니다.';
-  }
+    urlParams.forEach((quantity, key) => {
+    const productId = key.replace('id', '');
+    if (products[productId]) {
+        const productInfo = `<p><strong>주문 상품:</strong> ${products[productId]}<br><strong>수량:</strong> ${quantity}개</p>`;
+        orderSummaryElement.insertAdjacentHTML('beforeend', productInfo);
+    }
+    });
+
+    if (!orderSummaryElement.hasChildNodes()) {
+    orderSummaryElement.innerText = '주문할 상품이 없습니다.';
+    }
+
 
   document.getElementById('order-form').addEventListener('submit', function(event) {
     event.preventDefault();
