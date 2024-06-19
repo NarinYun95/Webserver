@@ -1,5 +1,5 @@
 body, html {
-    height: 100%; /* 전체 높이 설정 */
+    height: 100%; 
     margin: 0;
     padding: 0;
 }
@@ -7,19 +7,19 @@ body, html {
 .product-detail-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* 세로 중앙 정렬 추가 */
+    align-items: center;
     margin-top: 30px;
-    height: calc(100vh - 400px); /* 네비게이션 바와 푸터를 제외한 높이 */
+    height: calc(100vh - 400px); 
 }
 
 .product-image, .product-info {
-    width: 400px; /* 고정 너비 */
-    height: 400px; /* 고정 높이 */
+    width: 400px;
+    height: 400px; 
     display: flex;
-    flex-direction: column; /* 세로 방향 정렬 */
+    flex-direction: column; 
     align-items: center;
-    justify-content: center; /* 세로 중앙 정렬 추가 */
-    box-sizing: border-box; /* 패딩 포함 크기 조정 */
+    justify-content: center; 
+    box-sizing: border-box; 
 }
 
 .product-image{
@@ -29,7 +29,7 @@ body, html {
 .product-image img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* 이미지 비율 유지하면서 박스에 맞춤 */
+    object-fit: contain; 
 }
 
 .product-info {
@@ -54,7 +54,7 @@ body, html {
 
 .product-details {
     font-size: 14px;
-    margin-top: 10px; /* 이미지 아래에 위치하도록 상단 여백 */
+    margin-top: 10px; 
     text-align: center;
 }
 
@@ -62,17 +62,17 @@ body, html {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    justify-content: center; /* 중앙 정렬 */
+    justify-content: center; 
 }
 
 .quantity-container input[type="number"] {
-    width: 50px; /* 가로 길이 조정 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 50px; 
+    text-align: center;
 }
 
 .quantity-container input[type="number"]::-webkit-outer-spin-button,
 .quantity-container input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; /* WebKit 브라우저에서 화살표 버튼 제거 */
+    -webkit-appearance: none; 
     margin: 0;
 }
 

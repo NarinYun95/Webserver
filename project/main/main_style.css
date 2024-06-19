@@ -72,9 +72,9 @@ body, html {
 
 
 .character-box {
-    border: 2px solid #000; /* 이미지와 텍스트를 둘러싼 테두리 */
+    border: 2px solid #000; 
     border-radius: 5%;
-    padding: 20px; /* 테두리와 내부 요소 사이의 간격 */
+    padding: 20px; 
     margin-bottom: 40px;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ body, html {
 }
 
 .character-description {
-    margin: 0; /* 문단의 기본 마진 제거 */
+    margin: 0; 
     font-size: 20px;
     font-family: "Orbit", sans-serif;
   }
