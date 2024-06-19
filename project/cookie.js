@@ -22,7 +22,11 @@ function getCookie(name) {
 
 // 사용자 상태 확인 함수
 function checkUserStatus() {
-    let status = getCookie("status") || "non-member";
+    let status = getCookie("status");
+    if (!status || status === "non-member") {
+        setCookie("status", "non-member", 7); // 기본적으로 비회원으로 설정
+        status = "non-member";
+    }
     console.log("User status:", status);
     if (status === "member") {
         document.getElementById('memberSection').style.display = 'block';
