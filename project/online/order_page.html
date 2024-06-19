@@ -122,6 +122,20 @@
     event.preventDefault();
     window.location.href = 'order_complete.html';
   });
+
+  function restrictInputToNumbers(event) {
+      const key = event.key;
+      if (!/[0-9]/.test(key)) {
+        event.preventDefault();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const phoneInputs = document.querySelectorAll('.phone-input');
+      phoneInputs.forEach(function(input) {
+        input.addEventListener('keypress', restrictInputToNumbers);
+      });
+    });
 </script>
 
 </body>
